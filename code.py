@@ -8,6 +8,7 @@ def main():
     actual_length, num_phrase_in_length = actual_length_fun(phrase, length)
     string = operation(phrase, num_phrase_in_length)
     print(f"\nResultant string:\n{string}\nResultant string length: {actual_length}")
+    end()
 
 
 def title():
@@ -45,6 +46,15 @@ def operation(phrase, num_phrase_in_length):
         string += phrase + " "
     string = string[:-1]
     return string
+
+
+def end():
+    if input("\nInput any character(s) to run again or simply press ENTER to exit: ") == "":
+        print("\nDone.")
+        exit()
+    else:
+        print("")
+        main()
 
 
 main()
