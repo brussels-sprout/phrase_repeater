@@ -3,7 +3,16 @@
 
 
 def main():
-    operation(*input_())
+    title()
+    phrase, length = input_()
+    actual_length, num_phrase_in_length = actual_length_fun(phrase, length)
+    string = operation(phrase, num_phrase_in_length)
+    print(f"Resultant string:\n{string}\nResultant string length: {actual_length}")
+
+
+def title():
+    print("\033[1m" + "String repeater" + "\033[0;0m" + "\nby brussels-sprout\n")
+    # weird things make it bold
 
 
 def input_():
@@ -14,18 +23,28 @@ def input_():
         if length != 0:
             pass
         else:
-            print("Please input a positive integer for the length.")
+            print("Please input a positive integer for the length.\n")
             input_()
     else:
-        print("Please input a positive integer for the length.")
+        print("Please input a positive integer for the length.\n")
         input_()
     return phrase, length
 
 
-def operation(phrase, length):
+def actual_length_fun(phrase, length):
     phrase_length = len(phrase)
-    actual_length = length - length % phrase_length
-    print(actual_length)
+    num_phrase_in_length = (length + 1) // (phrase_length + 1)  # number of times phrase and a following space fits in length
+    num_spaces = num_phrase_in_length - 1
+    actual_length = num_phrase_in_length * phrase_length + num_spaces
+    return actual_length, num_phrase_in_length
+
+
+def operation(phrase, num_phrase_in_length):
+    string = ""
+    for n in range(num_phrase_in_length):
+        string += phrase + " "
+    string = string[:-1]
+    return string
 
 
 main()
