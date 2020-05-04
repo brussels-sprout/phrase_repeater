@@ -18,7 +18,7 @@ def title():
 
 def input_():
     phrase = input("Input phrase to repeat: ")
-    length = input("Input output string length: ")
+    length = input("Input resultant string length: ")
     if length.isdigit():
         length = int(length)
         if length != 0:
