@@ -3,7 +3,7 @@
 
 
 def main():
-    input_()
+    operation(*input_())
 
 
 def input_():
@@ -20,6 +20,12 @@ def input_():
         print("Please input a positive integer for the length.")
         input_()
     return phrase, length
+
+
+def operation(phrase, length):
+    phrase_length = len(phrase)
+    actual_length = length - length % phrase_length
+    print(actual_length)
 
 
 main()
