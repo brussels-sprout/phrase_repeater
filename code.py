@@ -41,10 +41,8 @@ def actual_length_fun(phrase, length):
 
 
 def operation(phrase, num_phrase_in_length):
-    string = ""
-    for n in range(num_phrase_in_length):
-        string += phrase + " "
-    string = string[:-1]
+    phrases = [phrase for _ in range(num_phrase_in_length)]
+    string = " ".join(phrases)
     return string
 
 
