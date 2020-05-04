@@ -7,7 +7,7 @@ def main():
     phrase, length = input_()
     actual_length, num_phrase_in_length = actual_length_fun(phrase, length)
     string = operation(phrase, num_phrase_in_length)
-    print(f"Resultant string:\n{string}\nResultant string length: {actual_length}")
+    print(f"\nResultant string:\n{string}\nResultant string length: {actual_length}")
 
 
 def title():
