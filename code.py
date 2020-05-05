@@ -3,7 +3,6 @@
 
 
 def main():
-    title()
     phrase, length = input_()
     actual_length, num_phrase_in_length = actual_length_fun(phrase, length)
     string = operation(phrase, num_phrase_in_length)
@@ -55,4 +54,5 @@ def end():
         main()
 
 
+title()
 main()
